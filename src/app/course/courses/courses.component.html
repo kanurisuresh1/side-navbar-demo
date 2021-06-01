@@ -1,0 +1,16 @@
+<section class="course">
+    <div class="col-lg-12 headcolor">
+        <h1 class="text-center mt-2 mb-2">All Course</h1>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-3 mb-5" *ngFor="let cs of course">
+            <div class="box shadow-sm">
+                <img src="{{cs.img}}" width="100%">
+                <h4 class="mt-2">{{cs.name}}</h4>
+                <p class="mt-2">{{cs.desp}}</p>
+                <button class="btn btn-primary btn-sm mt-2">Watch now</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="loginpage">
+    <div class="login col-lg-4 m-auto shadow-lg">
+      
+            <h2>Login form</h2>
+            <form [formGroup]="logingForm">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" formControlName="userName" placeholder="Enter email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" formControlName="pws" placeholder="Enter password" name="pswd">
+              </div>
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary col-lg-12" (click)="cheackUser()">login</button>
+            </form>
+          </div>
+</section>

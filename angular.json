@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TollGateInformation"
+    }
+  },
+  "defaultProject": "TollGateInformation",
+  "cli": {
+    "analytics": "0ad12370-64be-4ef8-b91b-b86846b4c994"
+  }
 }

@@ -1,0 +1,40 @@
+.home img{
+    width: 100%;
+    height: 600px;
+    object-position: center;
+    object-fit:cover ;
+}
+
+.homecontact{
+    position: absolute;
+    top: 22%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+}
+
+.homecontact h1 a{
+    color: black;
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+.homecontact a{
+    margin-top: 10px;
+}
+
+@media screen and (max-width:600px){
+    .home img{
+        height: 700px;
+    }
+    .homecontact h1 {
+        margin: 26px -190px 22px;
+    }
+    .btn-light{
+      margin:0px -148px 11px -51px;  
+    }
+
+    .btn-primary{
+        margin:0px 168px 10px -191px;  
+      }
+    
+}

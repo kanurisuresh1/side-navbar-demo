@@ -1,0 +1,21 @@
+.course{
+    background-color: darkgrey;
+    padding: 50px 100px;
+}
+
+.box{
+    background-color: white;
+    padding: 10px 20px;
+}
+.headcolor{
+    padding: 10px 50px;
+    background-color: floralwhite;
+}
+@media screen and (max-width:600px){
+    .course{
+        background-color: darkgrey;
+        padding: 50px 10px;
+       
+    }
+     
+}
