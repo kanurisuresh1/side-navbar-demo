@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup,FormBuilder } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { CommonService } from '../../common.service';
+import {userinfoDetails} from '../../home/userDetails';
 
 @Component({
   selector: 'app-table',
@@ -8,43 +11,73 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  getUserData: any;
+
+  UserinfoDetailesObj : userinfoDetails = new userinfoDetails();
+
+
+addUserDetails=new FormGroup({
+  name:new FormControl (''),
+  age:new FormControl (''),
+  phonenumber:new FormControl (''),
+  gmail:new FormControl ('')
+})
+
+
+  constructor(private curdservice:CommonService){
+
+  }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    this.getuserList();
+  }
+
+
+  adduser(){
+    console.log(this.addUserDetails.value);
+    this.UserinfoDetailesObj.name = this.addUserDetails.value.name;
+    this.UserinfoDetailesObj.age = this.addUserDetails.value.age;
+    this.UserinfoDetailesObj.phonenumber = this.addUserDetails.value.phonenumber;
+    this.UserinfoDetailesObj.gmail = this.addUserDetails.value.gmail;
+
+    this.curdservice.createUser(this.UserinfoDetailesObj).subscribe(ele=>{ele
+      alert ("New user add");
+       this.getuserList();
+    })
+  }
+
+  getuserList(){
+    this.curdservice.getAllUser().subscribe(ele=>{
+         this.getUserData=ele
+    })
+  }
+
+  edituser(data:any){
+    this.UserinfoDetailesObj.id=data.id;
+     this.addUserDetails.controls['name'].setValue(data.name);
+     this.addUserDetails.controls['age'].setValue(data.age);
+     this.addUserDetails.controls['phonenumber'].setValue(data.phonenumber);
+     this.addUserDetails.controls['gmail'].setValue(data.gmail);
+  }
+
+  updateUser(){
+    this.UserinfoDetailesObj.name = this.addUserDetails.value.name;
+    this.UserinfoDetailesObj.age = this.addUserDetails.value.age;
+    this.UserinfoDetailesObj.phonenumber = this.addUserDetails.value.phonenumber;
+    this.UserinfoDetailesObj.gmail = this.addUserDetails.value.gmail;
+    this.curdservice.updateUser(this.UserinfoDetailesObj,this.UserinfoDetailesObj.id).subscribe(()=>{
+      alert ("user update succesful");
+      this.getuserList();
+    })
+  }
+
+  deleteuser(delete_id){
+    this.curdservice.deleteUser(delete_id).subscribe(ele=>{
+      alert ("user remove succesful");
+      this.getuserList(); 
+    })
   }
 
 }
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-];

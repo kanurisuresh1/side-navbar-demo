@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "name": "suresv",
+      "age": 10,
+      "phonenumber": 65465464564,
+      "gmail": "suresh.kanuri6362@gmai.com",
+      "id": 3
+    },
+    {
+      "name": "dolly",
+      "age": 20,
+      "phonenumber": 998884546,
+      "gmail": "dolly@gmail.com",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

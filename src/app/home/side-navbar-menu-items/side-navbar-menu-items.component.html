@@ -7,6 +7,18 @@
         <mat-icon mat-list-icon>assignment</mat-icon>
         <h4 mat-line>Table</h4>
     </a>
+    <a mat-list-item routerLink="/home/searchData">
+        <h4 mat-line>searchData </h4>
+    </a>
+    <a mat-list-item routerLink="/home/dropdownsearch">
+        <h4 mat-line>dropdownSearch </h4>
+    </a>
+    <a mat-list-item routerLink="/home/reactiveform">
+        <h4 mat-line>Reactive Form Validation</h4>
+    </a>
+    <a mat-list-item routerLink="/home/curdopration">
+        <h4 mat-line>Curd Oprations</h4>
+    </a>
     <a mat-list-item (click)="toggleMenu()">
         <mat-icon mat-list-icon>business</mat-icon>
         <h4 mat-line> Learing Courses </h4>
@@ -18,8 +30,8 @@
             <mat-icon mat-list-icon>person</mat-icon>
             <h4 mat-line>Courses Details </h4>
         </a>
-        <a mat-list-item> Submenu Item 2</a>
-        <a mat-list-item> Submenu Item 3</a>
+
+        <a mat-list-item routerLink="/home/course/lazy"> lazy </a>
         <a mat-list-item> Submenu Item 4</a>
     </mat-nav-list>
 </mat-nav-list>

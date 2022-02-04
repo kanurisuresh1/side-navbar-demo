@@ -1,0 +1,57 @@
+<div class="col-md-12">
+    <form [formGroup]="addContractorDialogForm" (submit)="onAddContractor($event)">
+        <div class="row">
+            <div class="col-md-6 inputSection">
+                <label>First name*</label>
+                <mat-form-field appearance="outline" class="fullwidth">
+                    <input autocomplete="off" placeholder="eg. doe" matInput [formControl]="firstname" required />
+                    <mat-error *ngIf="firstname.invalid">{{ getErrorMessage(firstname) }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 inputSection">
+                <label>Last name*</label>
+                <mat-form-field appearance="outline" class="fullwidth">
+                    <input autocomplete="off" placeholder="eg. xyz" matInput [formControl]="lastname" required />
+                    <mat-error *ngIf="lastname.invalid">{{ getErrorMessage(lastname) }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 inputSection">
+                <label>Email*</label>
+                <mat-form-field appearance="outline" class="fullwidth">
+                    <input autocomplete="off" placeholder="abc@gmail.com" matInput [formControl]="workemail" required/>
+                    <mat-error *ngIf="workemail.invalid">{{ getErrorMessage(workemail) }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 inputSection">
+                <label>Address *</label>
+                <mat-form-field appearance="outline" class="fullwidth">
+                    <input style="resize: none" matInput [formControl]="address" />
+                    <mat-error *ngIf="address.invalid">{{ getErrorMessage(address) }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 inputSection">
+                <label>Payment mode *</label>
+                <mat-form-field appearance="outline" class="fullwidth">
+                    <mat-select [formControl]="paymentmode" required>
+                        <mat-option value="prepaid">Prepaid</mat-option>
+                        <mat-option value="postpaid">Postpaid</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="paymentmode.invalid">{{ getErrorMessage(paymentmode) }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <button type="submit" mat-raised-button class="dropdownbutton">
+              Submit
+          </button>
+            </div>
+        </div>
+    </form>
+</div>

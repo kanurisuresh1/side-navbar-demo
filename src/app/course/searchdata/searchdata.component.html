@@ -1,0 +1,18 @@
+<p>search</p><input type="text" [(ngModel)]="searchname" (input)="search()">
+<table class="table">
+    <tr>
+        <th>frist name</th>
+        <th>last name</th>
+        <th>phone number</th>
+    </tr>
+    <tr *ngFor='let o of empuserdata'>
+        <td>{{o.fname}}</td>
+        <td>{{o.lname}}</td>
+        <td>{{o.pnumber}}</td>
+    </tr>
+
+    <tr class="text-center overflow" *ngIf="!empuserdata.length" style="margin-top:67px;">
+        <p style="font-size: 12px; font-weight: 500; " class="text-secondary pt-2 ml-1">
+            No Vehicle found</p>
+    </tr>
+</table>

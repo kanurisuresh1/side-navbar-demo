@@ -1,0 +1,62 @@
+.dropdownbutton {
+    background-color: #EDC773;
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 18px !important;
+    border: #EDC773;
+    margin: 6px -8px 4px 6px
+}
+
+.search-box {
+    position: sticky;
+    top: 0px;
+    background: #fff;
+    padding: 2px 0px;
+    width: 100%;
+    z-index: 6;
+}
+
+.search-checkbox {
+    position: sticky;
+    top: 0px;
+    background: #fff;
+    padding: 2px 0px;
+    width: 100%;
+    z-index: 5;
+}
+
+.btsns-box {
+    position: sticky;
+    bottom: 0px;
+    background: #fff;
+    padding: 2px 12px;
+    width: 100%;
+    z-index: 0;
+}
+
+.scrollhidecheckBox {
+    height: 100%;
+    min-height: 200px;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow: scroll;
+    position: relative;
+}
+
+.scrollhidecheckBox::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollhide {
+    height: 100%;
+    min-height: 200px;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow: scroll;
+    position: relative;
+}
+
+.scrollhide::-webkit-scrollbar {
+    display: none;
+}

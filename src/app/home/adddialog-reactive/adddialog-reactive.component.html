@@ -1,0 +1,76 @@
+<div mat-dialog-content class="add">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="dialogformtitle" style="color: black">Add Client</h1>
+        </div>
+        <!-- <div class="col-10" *ngIf="this.data.isEditMode">
+            <h4 class="dialogformtitle">Edit Client</h4>
+          </div> -->
+
+        <div class="col-md-2 justify-content-end">
+            <button mat-icon-button (click)="onCloseClick()">
+                <img class="dialogclose" height="10" width="10" src="../../../../../assets/close.svg" />
+            </button>
+        </div>
+    </div>
+
+    <div class="row logincard addclientcard">
+        <div class="col-md-12">
+            <form [formGroup]="addContractorDialogForm" (submit)="onAddContractor($event)">
+                <div class="row">
+                    <div class="col-md-6 inputSection">
+                        <label>First name*</label>
+                        <mat-form-field appearance="outline" class="fullwidth">
+                            <input autocomplete="off" placeholder="eg. doe" matInput [formControl]="firstname" required />
+                            <mat-error *ngIf="firstname.invalid">{{ getErrorMessage(firstname) }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 inputSection">
+                        <label>Last name*</label>
+                        <mat-form-field appearance="outline" class="fullwidth">
+                            <input autocomplete="off" placeholder="eg. xyz" matInput [formControl]="lastname" required />
+                            <mat-error *ngIf="lastname.invalid">{{ getErrorMessage(lastname) }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 inputSection">
+                        <label>Email*</label>
+                        <mat-form-field appearance="outline" class="fullwidth">
+                            <input autocomplete="off" placeholder="abc@gmail.com" matInput [formControl]="workemail" required/>
+                            <mat-error *ngIf="workemail.invalid">{{ getErrorMessage(workemail) }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 inputSection">
+                        <label>Address *</label>
+                        <mat-form-field appearance="outline" class="fullwidth">
+                            <input style="resize: none" matInput [formControl]="address" />
+                            <mat-error *ngIf="address.invalid">{{ getErrorMessage(address) }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 inputSection">
+                        <label>Payment mode *</label>
+                        <mat-form-field appearance="outline" class="fullwidth">
+                            <mat-select [formControl]="paymentmode" required>
+                                <mat-option value="active">Prepaid</mat-option>
+                                <mat-option value="inactive">Postpaid</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="paymentmode.invalid">{{ getErrorMessage(paymentmode) }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="dropdownbutton" mat-raised-button class="fullwidth">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBaseUrl: 'https://www.pragatiutrack.com/api/user/',
+  X_API_KEY: 'FEA3E5D0QFCEBFD54F0A6A674ECAE3F8',
 };
 
 /*

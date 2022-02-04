@@ -54,6 +54,10 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
+import { DropdownsearchComponent } from './dropdownsearch/dropdownsearch.component';
+import { ReactiveFormValidationComponent } from './reactive-form-validation/reactive-form-validation.component';
+import { AdddialogReactiveComponent } from './adddialog-reactive/adddialog-reactive.component';
+import { CurdOprationComponent } from './curd-opration/curd-opration.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,7 @@ import { TableComponent } from './table/table.component';
      HeaderComponent, 
      FooterComponent, 
      SideNavbarMenuItemsComponent, 
-     SidenavBarComponent, TableComponent],
+     SidenavBarComponent, TableComponent, DropdownsearchComponent, ReactiveFormValidationComponent, AdddialogReactiveComponent, CurdOprationComponent],
   imports: [
     HomeRoutingModule,
     CommonModule,
